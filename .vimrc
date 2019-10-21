@@ -6,6 +6,13 @@
 "comman tree . dans le terminal
 
 
+"use find + *file tab
+"use :b + *file tab
+"use c / 
+"edit to folder in a file browser
+
+
+
 
 
 set nocompatible              " be iMproved, required
@@ -30,14 +37,10 @@ Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-function'
 Plugin 'tkhren/vim-textobj-numeral'
 Plugin 'vim-scripts/ReplaceWithRegister'
-" Plugin 'kien/ctrlp.vim'
-" Plugin 'scrooloose/nerdtree'
 " Plugin 'easymotion/vim-easymotion'
 " Plugin 'vim-syntastic/syntastic'
-" Plugin 'ycm-core/YouCompleteMe'
 " Plugin 'gilligan/vim-lldb'
 " Plugin 'mhinz/vim-startify'
-" pour git
 " Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
@@ -268,5 +271,21 @@ set wildmenu
 
 "highlight when seearching otherwise hightlight after enter
 set incsearch
+
+"open slip on the right
+let g:netrw_altv=1
+"tree view
+let g:netrw_liststyle=3
+
+
+"always showing status line
+set laststatus=2
+set statusline=
+set statusline+=\ %f  "the path
+set statusline+=%9*\ %=                                  " Space
+set statusline+=\ %p%%  " pourcentage
+set statusline+=\ %l:%c  " l:c
+
+
 
 
