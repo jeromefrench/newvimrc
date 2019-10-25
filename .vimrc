@@ -1,19 +1,16 @@
 "my note
 " use :botright split or :bo sp, it does what you want
-"ctrl + e to coancel autocompletion
+"ctrl + e to cancel autocompletion
 " pen the explorer in another tabpage using :Texplore
 " You can access the global bookmarks in the same way as local : :marks
-"comman tree . dans le terminal
-
+" comman tree . dans le terminal
 
 "use find + *file tab
 "use :b + *file tab
 "use c / 
 "edit to folder in a file browser
-
-
-
-
+" show me what this command do in insert mode :    help i_^n     ctrl n    c_^n   pour command mode
+" try helpgrep qqchose   puis cn pour quickfix navigation
 
 set nocompatible              " be iMproved, required
 "filetype off                  " required
@@ -214,6 +211,9 @@ runtime macros/matchit.vim
 "get out of bracket
 imap bb <esc>l%%a
 imap ,b <esc>f"a
+imap ,v <esc>f'a
+
+
 "pour sortire des parenthese  ctr o permet de rnetrer normal mode pour une commande
 inoremap <S-Tab> <C-o>A
 "tag jumping back
@@ -230,7 +230,6 @@ noremap <Left>t <C-t>
 :inoremap '' ''<esc>i
 :inoremap [[ []<esc>i
 :inoremap ,( ();<esc>h
-"get out
 
 
 
@@ -247,8 +246,6 @@ nnoremap ,<space> :noh<cr>
 
 
 
-
-
 "underscrore a s key boundary
 " :set iskeyword-=_
 
@@ -258,16 +255,10 @@ noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
 
-
-
-
-
-
 set path+=**
 
 set wildmenu
 " set wildmode=longest:full,full
-
 
 "highlight when seearching otherwise hightlight after enter
 set incsearch
