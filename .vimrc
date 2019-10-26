@@ -4,13 +4,48 @@
 " pen the explorer in another tabpage using :Texplore
 " You can access the global bookmarks in the same way as local : :marks
 " comman tree . dans le terminal
-
 "use find + *file tab
 "use :b + *file tab
 "use c / 
 "edit to folder in a file browser
 " show me what this command do in insert mode :    help i_^n     ctrl n    c_^n   pour command mode
 " try helpgrep qqchose   puis cn pour quickfix navigation
+":windo diffthis
+" ]m   go to the begining of next method
+" [[ : sections backward or to the previous '{' in the first column.
+
+
+"mark shows all the mark and 'number jump to it
+"ctrl-o et ctle-i cycle trough jumps
+"g;  g, cycle through :changes
+
+" pour set les error format
+" :set efm=%m\ in\ %f\ on\ line\ %l
+
+
+"********************************************
+" buffer management
+" ******************************************
+
+" :bn go to the next
+" :b file go to the file
+" :bd delete current buffer
+" :buffers print out all buffers
+
+"********************************************
+" argument management
+" ******************************************
+" :n go to the next file (base on arg list)
+" :arga (filename) to add file to arg list
+" :argl files make a local copy via files
+" :args print out args list
+
+
+
+
+
+
+
 
 set nocompatible              " be iMproved, required
 "filetype off                  " required
@@ -279,4 +314,6 @@ set statusline+=\ %l:%c  " l:c
 
 
 
-
+" In the quickfix window, <CR> is used to jump to the error under the
+" cursor, so undefine the mapping there.
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
