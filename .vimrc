@@ -73,12 +73,15 @@ Plugin 'vim-scripts/ReplaceWithRegister'
 " Plugin 'vim-syntastic/syntastic'
 " Plugin 'gilligan/vim-lldb'
 " Plugin 'mhinz/vim-startify'
-" Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
 Plugin 'terryma/vim-smooth-scroll'
 Plugin 'tpope/vim-repeat'
+Plugin 'SirVer/ultisnips'  " engine snippet
+Plugin 'honza/vim-snippets' "snippet template
+
 
 
 " The following are examples of different formats supported.
@@ -132,6 +135,10 @@ set background=dark    " Setting dark mode
 let g:gruvbox_contrast_dark='soft'
 
 
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "sessins comand
 ":SLoad    load a session
@@ -311,6 +318,17 @@ set statusline+=\ %f  "the path
 set statusline+=%9*\ %=                                  " Space
 set statusline+=\ %p%%  " pourcentage
 set statusline+=\ %l:%c  " l:c
+
+
+
+" hi StatusLine ctermbg=24 ctermfg=254
+" hi StatusLineNC ctermbg=252 ctermfg=238
+
+
+
+
+
+
 
 
 

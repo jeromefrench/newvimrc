@@ -114,3 +114,5 @@ export CMAKE_ROOT=/Users/jchardin/.brew/Cellar/cmake/3.13.3
 
 #alias python="/Users/jchardin/.brew/bin/python3"
 export PATH=/Users/jchardin/.brew/bin:/Users/jchardin/.brew/bin:/Users/jchardin/.brew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:/Users/jchardin/.brew/bin
+export PATH="/Users/jchardin/.brew/opt/node@10/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
