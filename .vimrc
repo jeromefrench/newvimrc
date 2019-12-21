@@ -1,4 +1,10 @@
 "my note
+
+"~ swap case character
+" USE SHIFT E
+" % go to next bracket
+
+
 " use :botright split or :bo sp, it does what you want
 "ctrl + e to cancel autocompletion
 " pen the explorer in another tabpage using :Texplore
@@ -173,8 +179,8 @@ syntax enable
 
 
 "moving split
-nnoremap <C-W>, <C-W><
-nnoremap <C-W>. <C-W>>
+nnoremap <C-W>, 5<C-W><
+nnoremap <C-W>. 5<C-W>>
 
 
 
@@ -271,6 +277,7 @@ noremap <Left>t <C-t>
 :inoremap (( ()<esc>i
 :inoremap '' ''<esc>i
 :inoremap [[ []<esc>i
+:inoremap {{ {}<esc>i
 :inoremap ,( ();<esc>h
 
 
@@ -279,7 +286,6 @@ noremap <Left>t <C-t>
 :nnoremap <space> i<space><esc>
 "yank until end of the line
 :nnoremap Y y$
-:imap {{ {<cr>}<esc>ko
 "automatic save when ctrl t ctag back
 :nnoremap <C-t> :w<CR><C-t>zz
 :nnoremap <C-]> :w<CR><C-]>zz
@@ -319,16 +325,8 @@ set statusline+=%9*\ %=                                  " Space
 set statusline+=\ %p%%  " pourcentage
 set statusline+=\ %l:%c  " l:c
 
-
-
 " hi StatusLine ctermbg=24 ctermfg=254
 " hi StatusLineNC ctermbg=252 ctermfg=238
-
-
-
-
-
-
 
 
 
