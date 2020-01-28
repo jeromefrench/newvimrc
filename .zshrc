@@ -116,3 +116,39 @@ export CMAKE_ROOT=/Users/jchardin/.brew/Cellar/cmake/3.13.3
 export PATH=/Users/jchardin/.brew/bin:/Users/jchardin/.brew/bin:/Users/jchardin/.brew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:/Users/jchardin/.brew/bin
 export PATH="/Users/jchardin/.brew/opt/node@10/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+
+
+
+setup_docker () {
+	#delete every old setting of docker that take too much space
+	rm -rf ~/Library/Containers/com.docker.docker
+	rm -rf ~/.docker
+	rm -rf ~/docker ~/agent
+	rm -rf ~/goinfre/docker ~/goinfre/agent ~/goinfre/helper
+	rm ~/goinfre
+
+	#Make sure that goinfre is good
+	mkdir -p /Volumes/Storage/goinfre/$(whoami)
+	ln -s /Volumes/Storage/goinfre/$(whoami) ~/goinfre
+	mkdir ~/goinfre/helper
+
+	#recreate dir that we delete in goinfre earlier and create symlink
+	mkdir -p ~/goinfre/docker ~/goinfre/agent 
+	mv ~/Library/Containers/com.docker.helper/* ~/Library/Containers/com.docker.helper/.* ~/goinfre/helper
+	rm -rf ~/Library/Containers/com.docker.helper
+	ln -s ~/goinfre/helper ~/Library/Containers/com.docker.helper
+	ln -s ~/goinfre/agent ~/Library/Containers/com.docker.docker
+	ln -s ~/goinfre/docker ~/.docker
+	open /Applications/Docker.app
+}
+
+
+
+
+
+
+
+
+
+
