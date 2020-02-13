@@ -142,13 +142,4 @@ setup_docker () {
 	ln -s ~/goinfre/docker ~/.docker
 	open /Applications/Docker.app
 }
-
-
-
-
-
-
-
-
-
-
+echo  "\033[1;34mCHANGE DE MoT DE PASSE\033[0m"
