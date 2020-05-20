@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jchardin/.oh-my-zsh"
+  export ZSH="/home/pi/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -26,8 +26,14 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -62,9 +68,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,9 +89,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -96,50 +97,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias make="make -j 4"
 
-# Load Homebrew config script
-source $HOME/.brewconfig.zsh
-
-
-export USER="jchardin"
-export MAIL="jerome.chardin@outlook.com"
-export VAGRANT_HOME=/Volumes/Storage/goinfre/jchardin/vagrant
-
-
-export VIMRUNTIME=/usr/share/vim/vim80
-
-
-export CMAKE_ROOT=/Users/jchardin/.brew/Cellar/cmake/3.13.3
-
-#alias python="/Users/jchardin/.brew/bin/python3"
-export PATH=/Users/jchardin/.brew/bin:/Users/jchardin/.brew/bin:/Users/jchardin/.brew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki:/Users/jchardin/.brew/bin
-export PATH="/Users/jchardin/.brew/opt/node@10/bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-
-
-
-setup_docker () {
-	#delete every old setting of docker that take too much space
-	rm -rf ~/Library/Containers/com.docker.docker
-	rm -rf ~/.docker
-	rm -rf ~/docker ~/agent
-	rm -rf ~/goinfre/docker ~/goinfre/agent ~/goinfre/helper
-	rm ~/goinfre
-
-	#Make sure that goinfre is good
-	mkdir -p /Volumes/Storage/goinfre/$(whoami)
-	ln -s /Volumes/Storage/goinfre/$(whoami) ~/goinfre
-	mkdir ~/goinfre/helper
-
-	#recreate dir that we delete in goinfre earlier and create symlink
-	mkdir -p ~/goinfre/docker ~/goinfre/agent 
-	mv ~/Library/Containers/com.docker.helper/* ~/Library/Containers/com.docker.helper/.* ~/goinfre/helper
-	rm -rf ~/Library/Containers/com.docker.helper
-	ln -s ~/goinfre/helper ~/Library/Containers/com.docker.helper
-	ln -s ~/goinfre/agent ~/Library/Containers/com.docker.docker
-	ln -s ~/goinfre/docker ~/.docker
-	open /Applications/Docker.app
-}
-echo  "\033[1;34mCHANGE DE MoT DE PASSE\033[0m"

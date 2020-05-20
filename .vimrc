@@ -1,4 +1,4 @@
-"my note
+
 
 "~ swap case character
 " USE SHIFT E
@@ -67,13 +67,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'pbondoer/vim-42header'
 " Plugin 'majutsushi/tagbar'
 Plugin 'morhetz/gruvbox'
-Plugin 'sheerun/vim-polyglot'
+" Plugin 'sheerun/vim-polyglot'
 " Plugin 'vim-airline/vim-airline'
 Plugin 'kana/vim-textobj-user'
 Plugin 'kana/vim-textobj-line'
 Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-function'
-Plugin 'tkhren/vim-textobj-numeral'
+Plugin 'kana/vim-textobj-indent'
+" Plugin 'tkhren/vim-textobj-numeral'
 Plugin 'vim-scripts/ReplaceWithRegister'
 " Plugin 'easymotion/vim-easymotion'
 " Plugin 'vim-syntastic/syntastic'
@@ -87,7 +88,7 @@ Plugin 'terryma/vim-smooth-scroll'
 Plugin 'tpope/vim-repeat'
 Plugin 'SirVer/ultisnips'  " engine snippet
 Plugin 'honza/vim-snippets' "snippet template
-
+Plugin 'posva/vim-vue'
 
 
 " The following are examples of different formats supported.
@@ -127,18 +128,18 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"nerdtree toggle
-" map <C-n> :NERDTreeToggle<CR>
+""nerdtree toggle
+"" map <C-n> :NERDTreeToggle<CR>
 
-"ctags toggle
-set tags=tags
-nmap <F8> :TagbarToggle<CR>
+""ctags toggle
+"set tags=tags
+"nmap <F8> :TagbarToggle<CR>
 
 "colosheme
 colorscheme gruvbox
 set background=dark    " Setting dark mode
-"set background=light   " Setting light mode
-let g:gruvbox_contrast_dark='soft'
+" "set background=light   " Setting light mode
+let g:gruvbox_contrast_dark='hard'
 
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -154,27 +155,32 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "probleme de config avec le nouveau vim
-let g:loaded_matchparen=1
+" let g:loaded_matchparen=1
+
+"disable preprocessors langage check
+let g:vue_pre_processors = []
+
+
 
 "yank into clipboard os
 set clipboard=unnamed
 
 "jj for echap
-" :imap jj <Esc>
-:imap jk <Esc>
+:imap jj <Esc>:w<CR>
+:imap jk <Esc>:w<CR>
+:nnoremap ;; <Esc>:w<CR>
 
 "put synthasic color
 syntax on
-syntax enable
 
 "relative line number and current line
-:set number relativenumber
+" :set number relativenumber
 
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
+" :augroup numbertoggle
+" :  autocmd!
+" :  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+" :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+" :augroup END
 
 
 
@@ -236,8 +242,8 @@ set backspace=indent,eol,start
 "to highlight word when searching
 :set hlsearch
 "folding code  zc to fold zo to unfold
-set foldmethod=syntax
-set foldlevelstart=99
+" set foldmethod=syntax
+" set foldlevelstart=99
 "disable auto comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "generate Ctag each time I save
@@ -293,6 +299,15 @@ noremap <Left>t <C-t>
 nnoremap ,<space> :noh<cr>
 
 
+:nnoremap <space>h <C-w>h
+:nnoremap <space>j <C-w>j
+:nnoremap <space>k <C-w>k
+:nnoremap <space>l <C-w>l
+
+
+
+
+
 
 "underscrore a s key boundary
 " :set iskeyword-=_
@@ -302,21 +317,6 @@ noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
 noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
-
-
-
-:inoremap <S-o> <esc><S-o>
-
-
-
-
-
-
-
-
-
-
-
 
 set path+=**
 
